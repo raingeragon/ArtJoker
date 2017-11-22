@@ -15,6 +15,7 @@ namespace Artjoker.App_Start
     using Ninject.Web.WebApi;
     using Artjoker.IoC.Interfaces;
     using Artjoker.IoC;
+    using Ninject.Modules;
 
     public static class NinjectWebCommon 
     {
@@ -51,7 +52,7 @@ namespace Artjoker.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
-                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
+               // GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch

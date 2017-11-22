@@ -14,7 +14,7 @@ namespace Artjoker.ApiControllers
         IGreeter greeter;
         public HiController(IHiGreeter igreeter)
         {
-            this.greeter = igreeter;
+            greeter = igreeter;
         }
         [HttpGet]
         public string Get()
